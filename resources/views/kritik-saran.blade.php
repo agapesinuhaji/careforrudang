@@ -99,9 +99,7 @@
 
 <div class="card">
 
-    {{-- LOGO --}}
     <div class="logo">
-        {{-- Ganti src dengan logo kamu --}}
         <img src="{{ asset('logo.png') }}" alt="Care For Rudang Logo">
     </div>
 
@@ -113,14 +111,12 @@
         Suara Anda berarti bagi kami 🤍
     </div>
 
-    {{-- Success Message --}}
     @if(session('success'))
         <div class="success">
             {{ session('success') }}
         </div>
     @endif
 
-    {{-- Validation Error --}}
     @if($errors->any())
         <div class="error">
             <ul>
@@ -134,14 +130,8 @@
     <form action="{{ route('message.store') }}" method="POST">
         @csrf
 
-        <label>Kritik</label>
+        <label>Pesan / Aspirasi</label>
         <textarea name="kritik" id="kritik"></textarea>
-
-        <label>Curhat</label>
-        <textarea name="curhat" id="curhat"></textarea>
-
-        <label>Saran</label>
-        <textarea name="saran" id="saran"></textarea>
 
         <button type="submit">Kirim Aspirasi</button>
 
@@ -151,21 +141,13 @@
     </form>
 </div>
 
-{{-- CKEditor CDN --}}
 <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
 <script>
     CKEDITOR.config.versionCheck = false;
+
     CKEDITOR.replace('kritik', {
-        height: 150
-    });
-
-    CKEDITOR.replace('curhat', {
-        height: 150
-    });
-
-    CKEDITOR.replace('saran', {
-        height: 150
+        height: 180
     });
 </script>
 

@@ -26,20 +26,6 @@ class MessagesTable
                     ->wrap()
                     ->searchable(),
 
-                TextColumn::make('curhat')
-                    ->label('Curhat')
-                    ->limit(50)
-                    ->html()
-                    ->wrap()
-                    ->searchable(),
-
-                TextColumn::make('saran')
-                    ->label('Saran')
-                    ->limit(50)
-                    ->html()
-                    ->wrap()
-                    ->searchable(),
-
                 TextColumn::make('created_at')
                     ->label('Date')
                     ->date('d M Y')

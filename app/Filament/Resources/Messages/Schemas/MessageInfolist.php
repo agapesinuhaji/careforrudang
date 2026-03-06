@@ -13,6 +13,16 @@ class MessageInfolist
         return $schema
             ->components([
 
+                Section::make('Isi Pesan')
+                    ->schema([
+                        TextEntry::make('kritik')
+                            ->label('')
+                            ->html()
+                            ->placeholder('Tidak ada pesan yang disampaikan.')
+                            ->columnSpanFull(),
+                    ])
+                    ->collapsible(),
+
                 Section::make('Informasi Pengirim')
                     ->schema([
                         TextEntry::make('name')
@@ -24,39 +34,8 @@ class MessageInfolist
                             ->label('Tanggal Kirim')
                             ->dateTime('d M Y - H:i')
                             ->icon('heroicon-o-calendar'),
-
                     ])
                     ->columns(2),
-
-                Section::make('Isi Kritik')
-                    ->schema([
-                        TextEntry::make('kritik')
-                            ->label('')
-                            ->html()
-                            ->placeholder('Tidak ada kritik yang disampaikan.')
-                            ->columnSpanFull(),
-                    ])
-                    ->collapsible(),
-
-                Section::make('Isi Curhat')
-                    ->schema([
-                        TextEntry::make('curhat')
-                            ->label('')
-                            ->html()
-                            ->placeholder('Tidak ada curhat yang disampaikan.')
-                            ->columnSpanFull(),
-                    ])
-                    ->collapsible(),
-
-                Section::make('Isi Saran')
-                    ->schema([
-                        TextEntry::make('saran')
-                            ->label('')
-                            ->html()
-                            ->placeholder('Tidak ada saran yang disampaikan.')
-                            ->columnSpanFull(),
-                    ])
-                    ->collapsible(),
 
             ]);
     }
